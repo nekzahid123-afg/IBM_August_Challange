@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* ── Base resets ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+
+/* ── Scrollbar styling ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ── Spinner animation ───────────────────────────────────── */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Bounce animation for chat dots ──────────────────────── */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.animate-bounce {
+  animation: bounce 0.7s ease-in-out infinite;
+}
+
+/* ── Focus ring ──────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ── Recharts tooltip dark theme ─────────────────────────── */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+  color: #f1f5f9 !important;
+}
+
+/* ── Responsive overrides ────────────────────────────────── */
+@media (max-width: 640px) {
+  .chat-panel-wrapper {
+    right: 8px !important;
+    bottom: 8px !important;
+  }
+
+  .upload-page h1 {
+    font-size: 32px !important;
+  }
+
+  .upload-page .heroRow {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .upload-page .brandHeader {
+    padding-bottom: 18px !important;
+  }
+
+  .upload-page .logoText {
+    font-size: 36px !important;
+  }
+
+  .upload-page .brandMark {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .upload-page h1 {
+    font-size: 42px !important;
+  }
+
+  .upload-page .logoText {
+    font-size: 48px !important;
+  }
+
+  .upload-page .brandMark {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+.upload-page .brandMark {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .upload-page .brandMark {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .upload-page .brandMark {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}

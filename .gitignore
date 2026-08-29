@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Databases / vector stores
+chroma_db/
+*.sqlite3
+
+# Test/log outputs
+*.log
+pytest_err.txt
+pytest_out.txt
+test_err.txt
+test_out.txt
+
+# Env files
+.env
+.env.*
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+IBM Bob/

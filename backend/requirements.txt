@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+scikit-learn
+python-dotenv
+pydantic
+requests
+markdown
+weasyprint
+pypdf
+python-docx
+# RAG pipeline dependencies
+chromadb
+sentence-transformers
+ibm-watsonx-ai
