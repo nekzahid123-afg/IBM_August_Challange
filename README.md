@@ -65,7 +65,7 @@ unavailable during a demo.
 ## Backend Setup
 
 ```bash
-cd orbitlens-ai/backend
+cd backend
 
 # (Optional but recommended) create a virtual environment
 python -m venv .venv
@@ -87,7 +87,7 @@ Health check: `GET http://localhost:8000/health` → `{"status":"ok"}`
 ## Frontend Setup
 
 ```bash
-cd orbitlens-ai/frontend
+cd frontend
 npm install
 npm run dev
 ```
