@@ -28,6 +28,27 @@ document chunk, never free-floating model guesswork.
 - **Hallucination guardrails** — low-similarity retrieval triggers an explicit "no strong reference match" response instead of a guess, in both the Insights panel and Chat. If the watsonx.ai call fails or times out, the system falls back to a template-based explanation so the demo never breaks.
 - **Downloadable mission report** — combines the health score, anomaly table, AI explanations, and mission summary into a single Markdown or PDF export.
 
+  ## A Note on Insight Generation Behavior
+
+Not every anomaly triggers a full Granite + RAG call. To keep the demo fast
+and cost-efficient, only **higher-severity anomalies** (currently:
+`HIGH` severity, and select `MEDIUM` cases) are routed through the full
+RAG-grounded Granite pipeline — these show a plausible root-cause
+hypothesis, a concrete recommendation, and a non-zero **Sources** count.
+
+Lower-severity anomalies (`LOW`, and most `MEDIUM`) are explained using a
+**deterministic template-based fallback** built directly from the anomaly's
+statistical description (rolling mean, std-dev, nominal range) — the same
+fallback used if a live watsonx.ai call fails or times out. These show
+`Sources (0)` and the generic phrasing *"requires further investigation via
+subsystem telemetry review."*
+
+This is intentional, not a bug: it mirrors real mission-ops triage, where
+minor deviations get a standard boilerplate flag while significant/critical
+anomalies get deeper, LLM-reasoned analysis. It also guarantees the app
+**never crashes or stalls** even if the watsonx.ai API is rate-limited or
+unavailable during a demo.
+
 ---
 
 ## Prerequisites
