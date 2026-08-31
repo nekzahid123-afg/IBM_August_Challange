@@ -12,6 +12,7 @@ both in a downloadable mission report and in a live chat window — so
 every AI claim is traceable to real telemetry data or a retrieved
 document chunk, never free-floating model guesswork.
 
+- **Coding Agent used for the application building**: **IBM bob**
 - **Frontend:** React 19 + Vite + TailwindCSS + Recharts (port 5173)
 - **Backend:** FastAPI + pandas + scikit-learn + ChromaDB + WeasyPrint (port 8000)
 - **AI:** IBM Granite via the watsonx.ai Foundation Models API, grounded by a custom RAG pipeline (sentence-transformers embeddings + ChromaDB retrieval)
